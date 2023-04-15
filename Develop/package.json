@@ -7,11 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "mysql": "mysql -u root -p -h 127.0.0.1 -P 3306",
+      "db:down": "docker-compose -f mysql.yml down -v",
+      "db:stop": "docker-compose -f mysql.yml stop -v",
+      "db:start": "docker-compose -f mysql.yml start -v",
+      "db:up": "docker-compose -f mysql.yml up -d",
+      "db:reset": "npm run db:down && npm run db:up"
   },
   "repository": {
-    "type": "git",
-    "url": "git@work.github.com:coding-boot-camp/module-13-challenge-orm.git"
+    "type": "git"
   },
   "keywords": [],
   "author": "",
